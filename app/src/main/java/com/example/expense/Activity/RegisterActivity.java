@@ -41,7 +41,10 @@ public class RegisterActivity extends AppCompatActivity {
         // Khởi tạo DBHelper
         dbHelper = new DBHelper(this);
 
-        // Xử lý sự kiện khi nhấn nút đăng ký
+        // Gán sự kiện click cho nút "Đăng ký"
+        btnRegister.setOnClickListener(v -> onClick(v));
+
+        // Xử lý sự kiện khi nhấn nút quay lại login
         btnBackToLogin.setOnClickListener(v -> {
             // Chuyển sang màn hình LoginActivity
             Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
@@ -161,6 +164,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     // Kiểm tra email hợp lệ
     private boolean isValidEmail(String email) {
+        // Biểu thức chính quy cho email hợp lệ
         String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
         return Pattern.matches(emailRegex, email);
     }

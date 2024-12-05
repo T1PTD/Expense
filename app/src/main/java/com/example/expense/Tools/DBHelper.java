@@ -74,9 +74,14 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
         return exists;
     }
+    public boolean updatePassword(String username, String newPassword) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("password", newPassword);
 
-
-
+        int result = db.update("Users", contentValues, "username = ?", new String[]{username});
+        return result > 0;
+    }
 
     // Method to validate login credentials
     public boolean validateLogin(String username, String password) {

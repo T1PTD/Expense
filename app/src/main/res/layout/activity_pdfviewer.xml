@@ -5,8 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PDFViewer">
-    <es.voghdev.pdfviewpager.library.PDFViewPager
-        android:id="@+id/pdfViewPager"
+
+    <!-- Use PDFView from Barteksc library instead of PDFViewPager -->
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/pdfView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        tools:ignore="MissingClass" />
 </RelativeLayout>

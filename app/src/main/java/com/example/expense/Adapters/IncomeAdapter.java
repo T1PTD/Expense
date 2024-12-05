@@ -204,14 +204,7 @@ public class IncomeAdapter extends RecyclerView.Adapter<IncomeAdapter.ViewHolder
             }
         });
 
-
-
-
-
         dialog.show();
-
-
-
     }
 
     private boolean checkValues(EditText title, TextInputEditText description, EditText amount) {

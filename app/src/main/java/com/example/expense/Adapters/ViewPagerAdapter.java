@@ -12,9 +12,8 @@ import com.example.expense.Fragment.YearlyFragment;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
-
     public ViewPagerAdapter(@NonNull FragmentManager fm) {
-        super(fm);
+        super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT); // Use modern behavior for lifecycle
     }
 
     @NonNull
@@ -30,7 +29,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             case 3:
                 return new YearlyFragment();
             default:
-                throw new IllegalStateException("Invalid position: " + position);
+                return new NoteFragment(); // Fallback to prevent crashes
         }
     }
 
@@ -46,12 +45,12 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             case 3:
                 return "YEARLY";
             default:
-                return ""; // Hoặc trả về một chuỗi mặc định
+                return "";
         }
     }
 
     @Override
     public int getCount() {
-        return 4;
+        return 4; // Total number of tabs
     }
 }

@@ -18,8 +18,6 @@
             android:padding="16dp">
 
                 <!-- Logo -->
-
-                <!-- Tên người dùng -->
                 <ImageView
                     android:id="@+id/ivLogo"
                     android:layout_width="120dp"
@@ -31,6 +29,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
+                <!-- Tên người dùng -->
                 <EditText
                     android:id="@+id/etUsername"
                     android:layout_width="0dp"
@@ -77,12 +76,30 @@
                     app:layout_constraintTop_toBottomOf="@id/etPassword"
                     app:layout_constraintWidth_percent="0.85" />
 
+                <!-- Nút quên mật khẩu -->
+                <TextView
+                    android:id="@+id/tvForgotPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:text="Forgot Password?"
+                    android:textColor="@color/teal_700"
+                    android:textSize="14sp"
+                    android:textStyle="italic"
+                    android:padding="12dp"
+                    android:background="?attr/selectableItemBackground"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnLogin" />
+
                 <!-- TextView đăng ký -->
                 <TextView
                     android:id="@+id/tvRegister"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="12dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:text="Don't have an account? Register"
@@ -93,8 +110,7 @@
                     android:background="?attr/selectableItemBackground"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/btnLogin" />
-
+                    app:layout_constraintTop_toBottomOf="@id/tvForgotPassword" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
